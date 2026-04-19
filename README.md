@@ -1,73 +1,63 @@
-# SQL Healthcare Reporting Project
+# 🏥 SQL Healthcare Reporting & Power BI Dashboard
 
-## Overview
-This project demonstrates how to convert business reporting requirements into SQL queries and stored procedures using a healthcare dataset.
+##  Overview
+This project simulates a real-world healthcare reporting scenario where business requirements are translated into SQL queries and visualized using Power BI.
 
-The goal was to simulate a real-world scenario where a manager requests reporting insights on provider claims.
+The system analyzes provider claims data to generate insights such as total claims, total revenue, and monthly trends.
 
 ---
 
-## Problem Statement
-A healthcare manager needs a report showing:
-- Total number of approved claims
-- Total claim amount
-- Average claim amount
-- Grouped by provider and month
-- Filterable by date range
+##  Business Problem
+A healthcare manager needs a reporting solution to:
+
+- Track total approved claims by provider
+- Analyze total claim revenue
+- Monitor monthly trends
+- Filter results by date range and provider
+- Support decision-making using data visualization
+
+---
+
+##  Solution
+I designed a SQL-based reporting system and integrated it with Power BI to create an interactive dashboard.
+
+### Key Components:
+- Relational database (SQL Server)
+- Aggregation queries using T-SQL
+- Parameterized stored procedures
+- Power BI dashboard for visualization
 
 ---
 
 ## Technologies Used
-- SQL Server
+- SQL Server (Docker container)
 - T-SQL (Joins, Aggregations, Stored Procedures)
 - Visual Studio Code (SQL Server Extension)
-- Docker (Local SQL Server instance)
+- Power BI (Dashboard & Visualization)
+- Docker (Local database environment)
 
 ---
 
-## Project Structure
-- `schema.sql` → table creation
-- `data.sql` → sample dataset
-- `queries.sql` → analysis queries
-- `procedures.sql` → reusable stored procedures
+##  Project Structure
+
+| File | Description |
+|-----|------------|
+| `healthcare.sql` | Creates the HealthcareDB database |
+| `schema.sql` | Defines tables (Providers, Claims) |
+| `data.sql` | Inserts sample data |
+| `procedures.sql` | Stored procedures for reporting |
+| `queries.sql` | Analytical queries |
+| `README.md` | Project documentation |
 
 ---
 
-## Key Features
+##  Database Setup
 
-### 1. Data Modeling
-Created relational tables for:
-- Providers
-- Claims
+Run the SQL files in this order:
 
-### 2. Data Analysis
-Used:
-- INNER JOIN to combine tables
-- GROUP BY for aggregation
-- SUM, COUNT, AVG for metrics
-
-### 3. Stored Procedures
-Implemented parameterized stored procedures to:
-- Filter by date range
-- Generate reusable reports
-
-### 4. Business Logic
-Applied filters such as:
-- Approved claims only
-- Monthly grouping
-
----
-
-## Example Query Output
-
-| Provider | Month | Total Claims | Total Amount | Avg Amount |
-|----------|------|-------------|-------------|-----------|
-| Dr. Smith | 2026-01 | 2 | 550.00 | 275.00 |
-
----
-
-## How to Run
-
-1. Create database:
 ```sql
-CREATE DATABASE HealthcareDB;
+1. healthcare.sql
+2. schema.sql
+3. data.sql
+4. procedures.sql
+5. queries.sql
